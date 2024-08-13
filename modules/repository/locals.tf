@@ -1,39 +1,40 @@
 locals {
   # New repositories are added to this list
   repositories_list = [
-    # {
-    #   name        = "go_worker_template"
-    #   description = "A repository template for containerised backend workers written in the Go language. Comes with a containerised MySQL instance and various application layer boilerplates already written."
-    #   topics      = ["golang", "ci", "worker", "docker", "cd"]
+    {
+      name        = "UnifyFootball"
+      description = "A repository for our lovely BOT written in .NET ."
+      topics      = ["discord", "bot", "net", "cs", "gcp"]
 
-    #   visibility = "public"
+      visibility = "public"
 
-    #   gitignore_template = "Go" # name as found on https://github.com/github/gitignore
+      gitignore_template = "" # name as found on https://github.com/github/gitignore
 
-    #   delete_branch_on_merge = true
+      delete_branch_on_merge = true
 
-    #   is_template = true
+      is_template = false
 
-    #   enable_vulnerability_alerts = true
-    #   enable_dependabot_updates   = true
+      enable_vulnerability_alerts = true
+      enable_dependabot_updates   = true
 
-    #   has_issues      = true
-    #   has_discussions = false
-    #   has_projects    = false
-    #   has_wiki        = false
+      has_issues      = true
+      has_discussions = false
+      has_projects    = true
+      has_wiki        = false
 
-    #   allows_force_pushes = false
-    #   force_push_bypassers = [
-    #     "/RazvanBerbece"
-    #   ]
+      allows_force_pushes = false
+      force_push_bypassers = [
+        "/RazvanBerbece",
+        "/fhatti"
+      ]
 
-    #   collaborators = [
-    #     {
-    #       username   = "ant-devbot"
-    #       permission = "admin"
-    #     }
-    #   ]
-    # },
+      collaborators = [
+        {
+          username   = "ant-devbot"
+          permission = "admin"
+        }
+      ]
+    },
   ]
 }
 
