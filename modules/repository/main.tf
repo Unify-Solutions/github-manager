@@ -25,7 +25,7 @@ resource "github_repository" "managed_repositories" {
     content {
       owner                = each.value.template_owner
       repository           = each.value.template_repository_name
-      include_all_branches = each.value.template_repository_include_all_branches
+      include_all_branches = false
     }
   }
 }
