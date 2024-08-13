@@ -34,8 +34,12 @@ locals {
           permission = "admin"
         }
       ]
-    }
 
+      # If repository should be based off a template, fill these in
+      uses_template            = false
+      template_owner           = ""
+      template_repository_name = ""
+    }
   ]
 }
 
@@ -59,6 +63,9 @@ locals {
       force_push_bypassers        = repository.force_push_bypassers
       enable_vulnerability_alerts = repository.enable_vulnerability_alerts
       enable_dependabot_updates   = repository.enable_dependabot_updates
+      uses_template               = repository.uses_template
+      template_owner              = repository.template_owner
+      template_repository_name    = repository.template_repository_name
     }
   })
 
