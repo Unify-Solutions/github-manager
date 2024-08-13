@@ -4,7 +4,7 @@ locals {
     {
       name        = "BaseTemplate"
       description = ""
-      topics      = [""]
+      topics      = []
 
       visibility = "public"
 
