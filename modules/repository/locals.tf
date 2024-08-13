@@ -2,9 +2,9 @@ locals {
   # New repositories are added to this list
   repositories_list = [
     {
-      name        = "UnifyFootball"
-      description = "A repository for our lovely BOT written in .NET ."
-      topics      = ["discord", "bot", "net", "cs", "gcp"]
+      name        = "BaseTemplate"
+      description = ""
+      topics      = [""]
 
       visibility = "public"
 
@@ -12,14 +12,14 @@ locals {
 
       delete_branch_on_merge = true
 
-      is_template = false
+      is_template = true
 
       enable_vulnerability_alerts = true
       enable_dependabot_updates   = true
 
       has_issues      = true
       has_discussions = false
-      has_projects    = true
+      has_projects    = false
       has_wiki        = false
 
       allows_force_pushes = false
@@ -34,7 +34,8 @@ locals {
           permission = "admin"
         }
       ]
-    },
+    }
+    
   ]
 }
 
