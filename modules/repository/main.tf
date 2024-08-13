@@ -19,6 +19,15 @@ resource "github_repository" "managed_repositories" {
   has_discussions = each.value.has_discussions
   has_projects    = each.value.has_projects
   has_wiki        = each.value.has_wiki
+
+  dynamic "template" {
+    for_each = each.value.uses_template == true ? [0] : []
+    content {
+      owner                = each.value.template_owner
+      repository           = each.value.template_repository_name
+      include_all_branches = each.value.template_repository_include_all_branches
+    }
+  }
 }
 
 resource "github_branch_protection" "managed_repositories_branch_protections" {

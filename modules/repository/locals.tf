@@ -34,6 +34,13 @@ locals {
           permission = "admin"
         }
       ]
+
+      # If repository should start from a template, fill these in
+      uses_template                            = false
+      template_owner                           = ""
+      template_repository_name                 = ""
+      template_repository_include_all_branches = ""
+
     }
 
   ]
