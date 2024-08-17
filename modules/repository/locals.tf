@@ -45,7 +45,7 @@ locals {
       description = "A repository made for our beloved Discord BOT written in .NET"
       topics      = ["discord", "bot", "cs", "gcp", "net"]
 
-      visibility = "public"
+      visibility = "private"
 
       gitignore_template = "" # name as found on https://github.com/github/gitignore
 
