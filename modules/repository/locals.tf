@@ -16,7 +16,7 @@ locals {
 
       enable_vulnerability_alerts = true
       enable_dependabot_updates   = true
-      enable_secret_scanning      = true
+      enable_secret_scanning      = "enabled"
 
       has_issues      = true
       has_discussions = false
@@ -56,7 +56,7 @@ locals {
 
       enable_vulnerability_alerts = true
       enable_dependabot_updates   = true
-      enable_secret_scanning      = false
+      enable_secret_scanning      = "disabled"
 
       has_issues      = true
       has_discussions = false
