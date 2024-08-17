@@ -16,6 +16,7 @@ locals {
 
       enable_vulnerability_alerts = true
       enable_dependabot_updates   = true
+      enable_secret_scanning      = true
 
       has_issues      = true
       has_discussions = false
@@ -55,6 +56,7 @@ locals {
 
       enable_vulnerability_alerts = true
       enable_dependabot_updates   = true
+      enable_secret_scanning      = false
 
       has_issues      = true
       has_discussions = false
@@ -105,6 +107,7 @@ locals {
       uses_template               = repository.uses_template
       template_owner              = repository.template_owner
       template_repository_name    = repository.template_repository_name
+      enable_secret_scanning      = repository.enable_secret_scanning
     }
   })
 

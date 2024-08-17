@@ -20,6 +20,12 @@ resource "github_repository" "managed_repositories" {
   has_projects    = each.value.has_projects
   has_wiki        = each.value.has_wiki
 
+  security_and_analysis {
+    secret_scanning {
+      status = each.value.enable_secret_scanning
+    }
+  }
+
   dynamic "template" {
     for_each = each.value.uses_template == true ? [0] : []
     content {
