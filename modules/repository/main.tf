@@ -47,9 +47,7 @@ resource "github_branch_protection" "managed_repositories_branch_protections" {
   # Hack Aug 2024
   # Github only allows branch protection rules for public repos, however some of the repos in this org
   # will be private. This makes it such that only public repos have the branch protection rules.
-  count = each.value.visibility == "public" ? 1 : 0
-
-  for_each = local.repositories_map
+  for_each = each.value.visibility == "public" ? local.repositories_map : []
 
   repository_id = each.key
 
