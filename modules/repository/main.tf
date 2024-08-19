@@ -20,10 +20,9 @@ resource "github_repository" "managed_repositories" {
   has_projects    = each.value.has_projects
   has_wiki        = each.value.has_wiki
 
-
   # Hack Aug 2024
-  # For some reason, the GH provider returns a 422 when applying the default secret scanning config
-  # to private repos. This should fix it.
+  # For some reason, the GH provider returns a 422 when applying the default secret scanning config (i.e disabled)
+  # to private repos. This should fix it by giving it an empty security_and_analysis config.
   # Source: https://github.com/integrations/terraform-provider-github/issues/2145
   dynamic "security_and_analysis" {
     for_each = each.value.enable_secret_scanning == "enabled" ? [0] : []
@@ -45,6 +44,11 @@ resource "github_repository" "managed_repositories" {
 }
 
 resource "github_branch_protection" "managed_repositories_branch_protections" {
+  # Hack Aug 2024
+  # Github only allows branch protection rules for public repos, however some of the repos in this org
+  # will be private. This makes it such that only public repos have the branch protection rules.
+  count = each.value.visibility == "public" ? 1 : 0
+
   for_each = local.repositories_map
 
   repository_id = each.key
