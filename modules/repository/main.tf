@@ -20,9 +20,17 @@ resource "github_repository" "managed_repositories" {
   has_projects    = each.value.has_projects
   has_wiki        = each.value.has_wiki
 
-  security_and_analysis {
-    secret_scanning {
-      status = each.value.enable_secret_scanning
+
+  # Hack Aug 2024
+  # For some reason, the GH provider returns a 422 when applying the default secret scanning config
+  # to private repos. This should fix it.
+  # Source: https://github.com/integrations/terraform-provider-github/issues/2145
+  dynamic "security_and_analysis" {
+    for_each = each.value.enable_secret_scanning == "enabled" ? [0] : []
+    content {
+      secret_scanning {
+        status = "enabled"
+      }
     }
   }
 
