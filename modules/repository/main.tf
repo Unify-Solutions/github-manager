@@ -43,25 +43,25 @@ resource "github_repository" "managed_repositories" {
   }
 }
 
-resource "github_branch_protection" "managed_repositories_branch_protections" {
-  # Hack Aug 2024
-  # Github only allows branch protection rules for public repos, however some of the repos in this org
-  # will be private. This makes it such that only public repos have the branch protection rules.
-  for_each = each.value.visibility == "public" ? local.repositories_map : []
+# Github only allows branch protection rules for public repos (unless we pay $$$), 
+# however some of the repos in this org will be private, thus only public repos can have branch protection rules.
+# TODO: Sort this.
+# resource "github_branch_protection" "managed_repositories_branch_protections" {
+#   for_each = local.repositories_map
 
-  repository_id = each.key
+#   repository_id = each.key
 
-  pattern          = "main"
-  enforce_admins   = true
-  allows_deletions = false
+#   pattern          = "main"
+#   enforce_admins   = true
+#   allows_deletions = false
 
-  require_conversation_resolution = true
+#   require_conversation_resolution = true
 
-  allows_force_pushes  = each.value.allows_force_pushes
-  force_push_bypassers = each.value.force_push_bypassers
+#   allows_force_pushes  = each.value.allows_force_pushes
+#   force_push_bypassers = each.value.force_push_bypassers
 
-  depends_on = [github_repository.managed_repositories]
-}
+#   depends_on = [github_repository.managed_repositories]
+# }
 
 # One list of collaborators per managed repository
 resource "github_repository_collaborators" "managed_repositories_collaborators" {
