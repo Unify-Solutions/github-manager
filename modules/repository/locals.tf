@@ -82,13 +82,13 @@ locals {
       template_repository_name = "BaseTemplate"
     },
     {
-      name        = "UnifyFootball-Infrastructure"
-      description = "Cloud infrastructure that hosts our UnifyFootball bot suite. Managed with Terraform."
-      topics      = ["cloud", "terraform", "platform", "container", "kube"]
+      name        = "AllSports-Extractor"
+      description = "Extractor of data from external football sources."
+      topics      = ["go", "cli"]
 
       visibility = "private"
 
-      gitignore_template = "Terraform" # name as found on https://github.com/github/gitignore
+      gitignore_template = "Go" # name as found on https://github.com/github/gitignore
 
       delete_branch_on_merge = true
 
@@ -100,7 +100,7 @@ locals {
 
       has_issues      = true
       has_discussions = false
-      has_projects    = true
+      has_projects    = false
       has_wiki        = false
 
       allows_force_pushes = false
@@ -120,7 +120,7 @@ locals {
       uses_template            = true
       template_owner           = "Unify-Solutions"
       template_repository_name = "BaseTemplate"
-    }
+    },
   ]
 }
 
