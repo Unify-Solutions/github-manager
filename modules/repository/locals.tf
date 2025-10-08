@@ -122,7 +122,7 @@ locals {
       template_repository_name = "BaseTemplate"
     },
     {
-      name        = "Super Raspi"
+      name        = "UnifyRaspiAssistant"
       description = "A repository made for our beloved Raspi"
       topics      = ["raspi", "puppeeter", "node", "node-server"]
 
