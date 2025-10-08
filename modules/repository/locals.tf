@@ -120,7 +120,47 @@ locals {
       uses_template            = true
       template_owner           = "Unify-Solutions"
       template_repository_name = "BaseTemplate"
-    }
+    },
+    {
+      name        = "Super Raspi"
+      description = "A repository made for our beloved Raspi"
+      topics      = ["raspi", "puppeeter", "node", "node-server"]
+
+      visibility = "private"
+
+      gitignore_template = "" # name as found on https://github.com/github/gitignore
+
+      delete_branch_on_merge = true
+
+      is_template = false
+
+      enable_vulnerability_alerts = true
+      enable_dependabot_updates   = true
+      enable_secret_scanning      = "disabled"
+
+      has_issues      = true
+      has_discussions = false
+      has_projects    = true
+      has_wiki        = false
+
+      allows_force_pushes = false
+      force_push_bypassers = [
+        "/RazvanBerbece",
+        "/fhatti"
+      ]
+
+      collaborators = [
+        {
+          username   = "ant-devbot"
+          permission = "admin"
+        }
+      ]
+
+      # If repository should be based off a template, fill these in
+      uses_template            = true
+      template_owner           = "Unify-Solutions"
+      template_repository_name = "BaseTemplate"
+    },
   ]
 }
 
