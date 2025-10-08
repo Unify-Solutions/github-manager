@@ -43,8 +43,8 @@ locals {
     },
     {
       name        = "UnifyFootball"
-      description = "A repository made for our beloved Discord BOT written in .NET"
-      topics      = ["discord", "bot", "cs", "gcp", "net"]
+      description = " A very easily and diversely customisable, feature-rich and robust Discord bot for football fans around the world."
+      topics      = ["discord", "bot", "cs", "worker", "net"]
 
       visibility = "private"
 
