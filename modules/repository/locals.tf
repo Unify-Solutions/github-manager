@@ -43,8 +43,8 @@ locals {
     },
     {
       name        = "UnifyFootball"
-      description = "A repository made for our beloved Discord BOT written in .NET"
-      topics      = ["discord", "bot", "cs", "gcp", "net"]
+      description = "A very easily and diversely customisable, feature-rich and robust Discord bot for football fans around the world."
+      topics      = ["discord", "bot", "cs", "worker", "net"]
 
       visibility = "private"
 
@@ -120,7 +120,47 @@ locals {
       uses_template            = true
       template_owner           = "Unify-Solutions"
       template_repository_name = "BaseTemplate"
-    }
+    },
+    {
+      name        = "UnifyRaspiAssistant"
+      description = "This repository is home to key services like the top.gg voter, our robust end-to-end testing suite for the webapp, and more"
+      topics      = ["raspi", "puppeeter", "e2e-test", "node-server"]
+
+      visibility = "private"
+
+      gitignore_template = "Node" # name as found on https://github.com/github/gitignore
+
+      delete_branch_on_merge = true
+
+      is_template = false
+
+      enable_vulnerability_alerts = true
+      enable_dependabot_updates   = true
+      enable_secret_scanning      = "disabled"
+
+      has_issues      = true
+      has_discussions = false
+      has_projects    = true
+      has_wiki        = false
+
+      allows_force_pushes = false
+      force_push_bypassers = [
+        "/RazvanBerbece",
+        "/fhatti"
+      ]
+
+      collaborators = [
+        {
+          username   = "ant-devbot"
+          permission = "admin"
+        }
+      ]
+
+      # If repository should be based off a template, fill these in
+      uses_template            = true
+      template_owner           = "Unify-Solutions"
+      template_repository_name = "BaseTemplate"
+    },
   ]
 }
 
