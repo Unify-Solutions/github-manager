@@ -123,12 +123,12 @@ locals {
     },
     {
       name        = "UnifyRaspiAssistant"
-      description = "A repository made for our beloved Raspi"
-      topics      = ["raspi", "puppeeter", "node", "node-server"]
+      description = "This repository is home to key services like the top.gg voter, our robust end-to-end testing suite for the webapp, and more"
+      topics      = ["raspi", "puppeeter", "e2e-test", "node-server"]
 
       visibility = "private"
 
-      gitignore_template = "" # name as found on https://github.com/github/gitignore
+      gitignore_template = "Node" # name as found on https://github.com/github/gitignore
 
       delete_branch_on_merge = true
 
