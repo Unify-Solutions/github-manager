@@ -43,7 +43,7 @@ locals {
     },
     {
       name        = "UnifyFootball"
-      description = " A very easily and diversely customisable, feature-rich and robust Discord bot for football fans around the world."
+      description = "A very easily and diversely customisable, feature-rich and robust Discord bot for football fans around the world."
       topics      = ["discord", "bot", "cs", "worker", "net"]
 
       visibility = "private"
