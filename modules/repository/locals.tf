@@ -242,7 +242,7 @@ locals {
       template_repository_name = "BaseTemplate"
     },
     {
-      name        = "Unipetly"
+      name        = "Nozumi"
       description = "An all-in-one pet health app to track meals, nutrition, medications, and daily wellbeing with simple reminders and clear insights for any pet."
       topics      = ["mobile", "swift", "app", "dotnet", "tracker"]
 
